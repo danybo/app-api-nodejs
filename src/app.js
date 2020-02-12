@@ -1,4 +1,17 @@
-const express = require("express")
+const express = require('express');
+const port = process.env.PORT;
+require('./database/db');
+
+const app = express();
+
+app.use(express.json());
+
+
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`)
+})
+
+/* const express = require("express")
 const axios = require("axios")
 const bodyParser = require("body-parser")
  
@@ -38,4 +51,4 @@ app.get("/getData", (req, res) => {
  
 app.listen(PORT, function () {
   console.log(`Express server listening on port ${PORT}`)
-})
+})*/
