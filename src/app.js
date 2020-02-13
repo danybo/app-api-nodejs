@@ -1,15 +1,29 @@
 const express = require('express');
 const port = process.env.PORT;
-require('./database/db');
 
+/**
+ * Database
+ */
+require('./database/db');
+ /**
+  * Route
+ */
+const authRoute = require('./routes/authRoute');  
+const userRoute = require('./routes/userRoute');
 const app = express();
 
 app.use(express.json());
+//app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: false }));
 
+app.use('/auth', authRoute);
+app.use('/users',userRoute);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
-})
+});
+
+module.exports = app;
 
 /* const express = require("express")
 const axios = require("axios")
