@@ -1,7 +1,8 @@
 const User = require('../models/User');
 
-
+//get tickets to be allowed to use
 exports.generateToken = async (req, res) => {
+
   // TODO sanitize request inputs
   /*
   if (!req.body.userId || !req.body.password) {
