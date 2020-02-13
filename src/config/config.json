@@ -1,0 +1,10 @@
+{
+    "development": {
+      "config_id": "development",
+      "node_port": 5000,
+      "jwt_secret_key": "AccessClientsInsurancesPolicies",
+      "mongodb_url": "mongodb+srv://danybodatabaseUser:<password>@cluster0-quo37.mongodb.net/insurancesPoliciesDB?retryWrites=true&w=majority",
+      "list_clients_url": "http://www.mocky.io/v2/5808862710000087232b75ac/",
+      "list_policies_url": "http://www.mocky.io/v2/580891a4100000e8242b75c5"
+    }
+  }
