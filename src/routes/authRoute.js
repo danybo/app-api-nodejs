@@ -9,7 +9,7 @@ const authController = require("../controllers/authController");
 
 const router = express.Router();
 
-// endpoint for login only email no password needed
+// endpoint for having a token
 router.post("/addUser", authController.generateToken);
 
 module.exports = router;
