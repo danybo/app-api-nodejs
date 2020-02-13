@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const Role = require('../models/Role');
+//const Role = require('../models/Role');
 
 // Create a new user in db
 exports.addUser = async (req, res) => {
