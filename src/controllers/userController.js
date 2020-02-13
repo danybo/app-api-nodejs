@@ -1,9 +1,9 @@
 const User = require('../models/User');
 const Role = require('../models/Role');
 
-
+// Create a new user in db
 exports.addUser = async (req, res) => {
-  // Create a new user
+  
   try {
     //const user = new User(req.body);
     ///
@@ -24,6 +24,7 @@ exports.addUser = async (req, res) => {
   }
 };
 
+
 exports.findUserByName = async (req, res) => {
     try {
       console.log(req.query.name);
@@ -43,4 +44,17 @@ exports.findUserByName = async (req, res) => {
       console.error(error);
       res.status(500).send(error)
     }
+};
+
+exports.findUserByIdClient = async (req, res) => {
+  try {
+    const userId = req.params.idClient;
+    const user = await User.findOne({ id: userId });
+    if (!user) {
+      return res.status(404).send({ error: "Client not found" });
+    }
+    res.send({ user });
+  } catch (error) {
+    res.status(400).send(error);
+  }
 };

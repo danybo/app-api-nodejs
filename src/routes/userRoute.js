@@ -12,5 +12,6 @@ const router = express.Router();
 // endpoint for adding client user to db
 router.post('/addUser', userController.addUser);
 router.get('/findUserByName', userController.findUserByName);
+router.get('/findUserByIdClient/:idClient', userController.findUserByIdClient);
 
 module.exports = router;
