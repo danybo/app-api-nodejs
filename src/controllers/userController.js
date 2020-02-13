@@ -28,11 +28,11 @@ exports.findUserByName = async (req, res) => {
     try {
       console.log(req.query.name);
       let user;
-      if (req.role === Role.ADMIN) {
+      //if (req.role === Role.ADMIN) {
         user = await User.findOne({name: req.query.name});
-      } else { // simple user can only request for its name
-        user = await User.findOne({name: req.query.name, id: req.user});
-      }
+      //} else { // simple user can only request for its name
+      //  user = await User.findOne({name: req.query.name, id: req.user});
+      //}
       if (user) {
         res.send(user);
       } else {
