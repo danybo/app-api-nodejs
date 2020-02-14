@@ -1,6 +1,10 @@
 const express = require('express');
 const port = process.env.PORT;
 
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDoc = require('./middleware/swaggerDoc');
+
 /**
  * Database
  */
@@ -16,7 +20,7 @@ const app = express();
 app.use(express.json());
 //app.use(express.urlencoded());
 app.use(express.urlencoded({ extended: false }));
-
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/auth', authRoute);
 app.use('/users', userRoute);
 app.use('/policies', policyRoute);

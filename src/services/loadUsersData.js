@@ -30,6 +30,7 @@ function loadUsers(listUsers){
                 email: client.email,
                 role: client.role
             });
+            user.generateAuthToken(); //need to handle this in case of error
             user.save().then(console.log('insert user: ' + user));
         });
     } catch (err){
